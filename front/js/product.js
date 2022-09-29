@@ -40,7 +40,7 @@ fetch("http://localhost:3000/api/products/" + id)
         const ColorsChoice = document.createElement("option");
         ColorsChoice.value = product.colors[i];
         ColorsChoice.innerHTML = product.colors[i];
-        productColorsChoice.appendChild(colors);
+        productColorsChoice.appendChild(ColorsChoice);
       }
     }
   );
