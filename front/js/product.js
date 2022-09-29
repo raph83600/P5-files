@@ -34,5 +34,12 @@ fetch('http://localhost:3000/api/products/' + id)
   productDescription.innerHTML = product.description;
 
   const productColorsChoice = document.getElementById("colors");
-  console.log(colors);
+  
+  for (let i = 0; i < productColorsChoice.length; i++) {
+   const ColorsChoice = document.createElement("option");
+   ColorsChoice.value = product.colors[i];
+   ColorsChoice.innerHTML = product.colors[i];
+   productColorsChoice.appendChild(ColorsChoice);
+  }
+
 })
