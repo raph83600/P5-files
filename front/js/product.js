@@ -42,6 +42,15 @@ fetch("http://localhost:3000/api/products/" + id)
       alert("produit indisponible",error)
 });
 
+//Création du kanapProd avec ses éléments
+class kanapProd {
+  constructor(id, option, quantity) {
+    this.id = id;
+    this.option = option;
+    this.quantity = quantity;
+  }
+}
+
 
 
 
