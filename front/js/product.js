@@ -12,11 +12,9 @@ fetch("http://localhost:3000/api/products/" + id)
     let responsejson = response.json();
     return responsejson;
   })
-  .then(
-    (
-      product //creation de la boucle pour appel des produits
-    ) => {
-      console.log(product);
+
+//creation de la boucle pour appel des produits
+  .then((product) => { 
 
       //Images
       let contenerimg = document.querySelector(".item__img");
@@ -35,12 +33,24 @@ fetch("http://localhost:3000/api/products/" + id)
       productDescription.innerHTML = product.description;
 
       //couleurs
-      const productColorsChoice = document.getElementById("colors");
-      for (let i = 0; i < productColorsChoice.length; i++) {
-        const ColorsChoice = document.createElement("option");
-        ColorsChoice.value = product.colors[i];
-        ColorsChoice.innerHTML = product.colors[i];
-        productColorsChoice.appendChild(ColorsChoice);
-      }
-    }
-  );
+      const ColorsChoice = product.colors;
+      for (let color of ColorsChoice) {
+        document.getElementById("colors").innerHTML += `<option value="${color}">${color}</option>`;
+      };
+    })
+    .catch((error) => {
+      alert("produit indisponible",error)
+});
+
+
+
+
+
+
+    
+
+
+
+
+
+  ;
