@@ -33,8 +33,8 @@ fetch("http://localhost:3000/api/products/" + id)
       productDescription.innerHTML = product.description;
 
       //couleurs
-      const ColorsChoice = product.colors;
-      for (let color of ColorsChoice) {
+      const colorsChoice = product.colors;
+      for (let color of colorsChoice) {
         document.getElementById("colors").innerHTML += `<option value="${color}">${color}</option>`;
       };
     })
